@@ -39,4 +39,11 @@ target_link_libraries(la16
     PRIVATE lautils
 )
 
+add_library(la16_headers INTERFACE)
+
+target_include_directories(la16_headers
+    INTERFACE
+        ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
+
 target_compile_features(la16 PRIVATE c_std_99)
