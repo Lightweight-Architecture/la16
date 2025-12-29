@@ -118,6 +118,10 @@ la16_opfunc_t opfunc_table[LA16_OPCODE_MAX + 1] = {
     NULL,
     NULL,
     NULL,
+
+    /* control flow extension */
+    la16_op_jz,
+    la16_op_jnz
 };
 
 la16_core_t la16_core_alloc()

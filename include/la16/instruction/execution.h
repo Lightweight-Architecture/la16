@@ -38,4 +38,7 @@ void la16_op_jge(la16_core_t core);
 void la16_op_bl(la16_core_t core);
 void la16_op_ret(la16_core_t core);
 
+void la16_op_jz(la16_core_t core);
+void la16_op_jnz(la16_core_t core);
+
 #endif /* LA16_INSTRUCTION_EXECUTION_H */

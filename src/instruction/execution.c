@@ -152,3 +152,21 @@ void la16_op_ret(la16_core_t core)
     la16_op_pop_ext(core, core->rl[LA16_REGISTER_CF]);
     la16_op_pop_ext(core, core->rl[LA16_REGISTER_PC]);
 }
+
+void la16_op_jz(la16_core_t core)
+{
+    if(*(core->op.param[0]) == 0)
+    {
+        core->op.param[0] = core->op.param[1];
+        la16_op_jmp(core);
+    }
+}
+
+void la16_op_jnz(la16_core_t core)
+{
+    if(*(core->op.param[0]) != 0)
+    {
+        core->op.param[0] = core->op.param[1];
+        la16_op_jmp(core);
+    }
+}

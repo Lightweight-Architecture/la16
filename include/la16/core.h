@@ -107,7 +107,11 @@
 #define LA16_OPCODE_CRCTXHNDLSET    0b00111010
 #define LA16_OPCODE_CREXCHNDLSET    0b00111011
 
-#define LA16_OPCODE_MAX             LA16_OPCODE_CREXCHNDLSET
+/* control flow extension */
+#define LA16_OPCODE_JZ              0b00111100
+#define LA16_OPCODE_JNZ             0b00111101
+
+#define LA16_OPCODE_MAX             LA16_OPCODE_JNZ
 
 #pragma mark - parameter combination
 
