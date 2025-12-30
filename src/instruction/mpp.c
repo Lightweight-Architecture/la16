@@ -29,7 +29,7 @@
 typedef struct {
     /* physical */
     unsigned short phys_addr;           /* physical address */
-    unsigned char phys_page;            /* physical page */
+    unsigned short phys_page;           /* physical page */
 
     /* virtual */
     unsigned short virt_addr;           /* virtual address */
