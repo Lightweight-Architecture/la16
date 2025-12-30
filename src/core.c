@@ -165,9 +165,6 @@ static void la16_core_decode_instruction_at_pc(la16_core_t core)
     /* reset operation structure */
     memset(&(core->op), 0, sizeof(la16_operation_t));
 
-    /* preparing 4 byte buffer for the entire instruction */
-    unsigned char instruction[4] = {};
-
     /* preparing real address for memory */
     unsigned short pc_real_addr = *(core->pc);
 
@@ -182,9 +179,7 @@ static void la16_core_decode_instruction_at_pc(la16_core_t core)
         return;
     }
 
-    /* copying instruction from memory into instruction copy */
-    memcpy(instruction, &core->machine->memory->memory[pc_real_addr], 4);
-
+    /* initilize */
     bitwalker_t bw;
     bitwalker_init_read(&bw, &(core->machine->memory->memory[pc_real_addr]), sizeof(unsigned int), BW_LITTLE_ENDIAN);
 
